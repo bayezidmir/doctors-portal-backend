@@ -1,0 +1,30 @@
+s-1: npm init -y
+s-2: npm i express cors dotenv mongodb jsonwebtoken
+s-3: create index.js in the directory
+s-4: add following two lines in package.json under script
+"start":"node index.js",
+    "start-dev":"nodemon index.js",
+s-5: go to expressjs.com -> getting started-> hello world, copy all the codes and paste it in index.js. codes are....
+___________________________________________________________
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Hello from Node");
+});
+
+app.listen(port, () => {
+  console.log(`The server with port ${port} is up and running`);
+});
+____________________________________________________________
+
+s-6: go to mongodb atlas (use touch vpn if regular internet gets error 403)
+s-7: connect mongodb atlas with server from database->connect->connect your application
+s-8: create a async function with the name 'run' or copy from node mongodb crud -> use example-> find multiple documents
+s-9: 
